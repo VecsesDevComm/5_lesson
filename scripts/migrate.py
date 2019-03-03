@@ -52,12 +52,23 @@ src_corrects = [
 src_letters = { 'a': 0, 'b': 1 }
 
 def insert_question(question):
-  cursor.execute('INSERT INTO questions (question) VALUES (?)', (question,))
+  cursor.execute(
+    '''INSERT INTO questions
+        (question)
+      VALUES
+        (?)
+    ''',
+    (question,)
+  )
   return cursor.lastrowid
 
 def insert_answer(question_id, position, is_correct, answer):
   cursor.execute(
-    'INSERT INTO answers (answer, position, is_correct, question) VALUES (?, ?, ?, ?)',
+    '''INSERT INTO answers
+          (answer, position, is_correct, question)
+        VALUES
+          (?, ?, ?, ?)
+    ''',
     (answer, position, is_correct, question_id)
   )
 
