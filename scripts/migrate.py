@@ -32,24 +32,24 @@ cursor.execute(create_answers)
 connection.commit()
 
 src_questions = [
-  'Mennyi egy töketlen fecske repülési sebessége?',
-  'Mi az élet értelme?',
-  'Mi jobb tíz tyúknyaknál?'
+  'Egy futóversenyen megelőzöd a második helyezettet, hanyadik leszel?',
+  'Hány évig tartott a 100 éves háború?',
+  'Hány állatot vitt fel Mózes a bárkájára?'
 ]
 
 src_answers = [
-  ['60km/h', 'Attól függ, afrikai vagy európai'],
-  ['A sör', '42'],
-  ['11 tyúknyak', '10 lúdnyak']
+  ['első', 'második', 'harmadik'],
+  ['122', '100', '98'],
+  ['mindenből kettő', '1', 'egyet sem']
 ]
 
 src_corrects = [
   'b',
   'b',
-  'a'
+  'c'
 ]
 
-src_letters = { 'a': 0, 'b': 1 }
+src_letters = { 'a': 0, 'b': 1, 'c': 2 }
 
 def insert_question(question):
   cursor.execute(
