@@ -35,7 +35,6 @@ def draw_text_button(x, y, w, h, text, clickable = True):
   if clickable and pygame.Rect((x, y), (w, h)).collidepoint(m_point):
     pygame.draw.rect(screen, green, (x, y, w, h))
     if m_click[0] == 1:
-      print('click')
       action_intent = True
   else:
     pygame.draw.rect(screen, dark_green, (x, y, w, h))
